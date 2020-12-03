@@ -3,7 +3,7 @@ class CreateBows < ActiveRecord::Migration
     create_table :bows do |t|
       t.integer :user_id
       t.integer :maker_id
-      t.string :type
+      t.string :instrument
       t.string :brand
       t.integer :last_sold_price
       t.string :last_sold_date
