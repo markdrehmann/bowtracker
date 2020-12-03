@@ -13,6 +13,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get "/not-logged-in" do
+    erb :not_logged_in
+  end
+
   helpers do
     def current_user
       @user = User.find(session[:user_id]) if session[:user_id]
@@ -20,6 +24,18 @@ class ApplicationController < Sinatra::Base
   
     def logged_in?
       !!current_user
+    end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect "/not-logged-in"
+      end
+    end
+
+    def redirect_if_logged_in
+      if logged_in?
+        redirect "/bows"
+      end
     end
   end
 
