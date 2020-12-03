@@ -1,0 +1,4 @@
+class BowsController < ApplicationController
+
+
+end
