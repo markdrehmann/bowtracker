@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
+        redirect_if_not_logged_in
         @user = current_user # code something so users can only see their own page
         erb :"/users/show"
     end
