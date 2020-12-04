@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201203042908) do
+ActiveRecord::Schema.define(version: 20201204043614) do
 
   create_table "bows", force: :cascade do |t|
     t.integer "user_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20201203042908) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user"
+    t.string "username"
     t.string "email"
     t.string "password_digest"
   end
