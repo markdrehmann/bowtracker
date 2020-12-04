@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
         user = User.create(username: params[:username], email: params[:email], password: params[:password])
         session[:user_id] = user.id
-        redirect to "/bows"
+        redirect to "/users/#{user.id}"
     end
 
     get '/users/login' do
@@ -27,10 +27,14 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect '/bows'
+            redirect "/users/#{user.id}"
          else
             erb :'/users/login'
          end
     end
 
+    get '/users/:id' do
+        @user = current_user # code something so users can only see their own page
+        erb :"/users/show"
+    end
 end
