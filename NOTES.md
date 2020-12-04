@@ -28,6 +28,7 @@ User can create a new bow, edit/delete their own bows
 Bow show page - individual bow's attributes - NOT owner??
 Maker show page - individual maker's information
 Maybe make it so Makers can't be edited... or find some way to keep users from entering wrong info?
+- possibly Makers don't have a '/new' page, they can only be created in '/bows/new'
 
 
 - one way to expand, a User can either be a musician or a maker? not sure how to have subclasses of users...
