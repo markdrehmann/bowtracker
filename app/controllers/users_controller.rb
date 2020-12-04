@@ -1,20 +1,13 @@
 class UsersController < ApplicationController
 
     get '/users/new' do
+        redirect_if_logged_in
         erb :"users/new"
     end
 
     get '/users/login' do
+        redirect_if_logged_in
         erb :"users/login"
-    end
-
-    get '/logout' do
-        if logged_in?
-          session.destroy
-          redirect to '/'
-        else
-          redirect to '/'
-        end
     end
 
 end

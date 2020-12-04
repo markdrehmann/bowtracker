@@ -17,6 +17,15 @@ class ApplicationController < Sinatra::Base
     erb :not_logged_in
   end
 
+  get '/logout' do
+    if logged_in?
+      session.destroy
+      redirect to '/'
+    else
+      redirect to '/'
+    end
+end
+
   helpers do
     def current_user
       @user = User.find(session[:user_id]) if session[:user_id]
