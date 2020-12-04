@@ -1,0 +1,7 @@
+form  { display: table;      }
+p     { display: table-row;  }
+label { 
+    display: table-cell;
+    text-align: left;
+}
+input { display: inline-block; }
