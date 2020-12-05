@@ -12,12 +12,6 @@
 
 <form method="post" action="/bows">
 <p>
-    <label>Makers:</label><br>
-    <% @makers.each do |maker| %>
-        <input type="radio" name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %><br>
-    <% end %>
-</p>
-<p>
     <label for="instrument">Instrument:</label>
     <input type="text" name="instrument" id="instrument" placeholder="violin/viola/etc...">
     <label for="brand">Brand:</label>
@@ -44,6 +38,12 @@
 <p>
     <label for="notes">Notes:</label>
     <input type="text" name="notes" id="notes">
+</p><br>
+<p>
+    <label>Makers:</label> # switch this from radio buttons to a dropdown menu - include create new maker
+    <% @makers.each do |maker| %>
+        <input type="radio" name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %>
+    <% end %>
 </p><br>
 <p>
     <input type="submit" value="Add Bow">
