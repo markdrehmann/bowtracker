@@ -40,10 +40,16 @@
     <input type="text" name="notes" id="notes">
 </p><br>
 <p>
-    <label>Makers:</label> # switch this from radio buttons to a dropdown menu - include create new maker
-    <% @makers.each do |maker| %>
-        <input type="radio" name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %>
-    <% end %>
+    <label>Makers:</label>
+
+    <select name="maker" id="maker">
+        <option value=""></option>
+        <% @makers.each do |maker| %>
+            <option name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %></option>
+        <% end %>
+
+    </select>
+
 </p><br>
 <p>
     <input type="submit" value="Add Bow">
