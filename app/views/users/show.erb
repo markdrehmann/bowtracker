@@ -7,5 +7,11 @@
     <a href="/makers">MAKERS</a> |
     <a href="/logout">LOGOUT</a>
 </nav>
-
 </center>
+
+<h3>Your Bows</h3>
+<ul>
+    <% @user.bows.each do |bow| %>
+        <li><a href="/bows/<%= bow.id %>"><%= bow.maker.name %></a></li>
+    <% end %>
+</ul>
