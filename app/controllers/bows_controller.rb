@@ -5,8 +5,12 @@ class BowsController < ApplicationController
         erb :'/bows/index'
     end
 
+    get '/bows/new' do
+        erb :'/bows/new'
+    end
+
     get '/bows/:id' do
-        
+
         erb :'/bows/show'
     end
 end
