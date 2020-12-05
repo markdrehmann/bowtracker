@@ -40,16 +40,16 @@
     <input type="text" name="notes" id="notes">
 </p><br>
 <p>
-    <label>Makers:</label>
-
+    <label>Maker:</label>
     <select name="maker" id="maker">
         <option value=""></option>
         <% @makers.each do |maker| %>
             <option name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %></option>
         <% end %>
-
     </select>
 
+    <label>Or Add Maker:</label>
+    <input type="text" name="maker[name]">
 </p><br>
 <p>
     <input type="submit" value="Add Bow">
