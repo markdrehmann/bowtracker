@@ -12,6 +12,12 @@
 
 <form method="post" action="/bows">
 <p>
+    <label>Makers:</label><br>
+    <% @makers.each do |maker| %>
+        <input type="radio" name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %><br>
+    <% end %>
+</p>
+<p>
     <label for="instrument">Instrument:</label>
     <input type="text" name="instrument" id="instrument" placeholder="violin/viola/etc...">
     <label for="brand">Brand:</label>
