@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    redirect_if_logged_in
     erb :index
   end
 
