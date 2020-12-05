@@ -4,7 +4,9 @@ label {
     display: table-cell;
     text-align: left;
 }
-input { display: table-cell; }
+input { 
+    display: table-cell;
+}
 
 /* a {
     color: black;

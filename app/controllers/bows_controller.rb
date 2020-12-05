@@ -11,6 +11,11 @@ class BowsController < ApplicationController
         erb :'/bows/new'
     end
 
+    post '/bows' do
+
+        # direct to the created bows show page
+    end
+
     get '/bows/:id' do
         redirect_if_not_logged_in
         @bow = Bow.find(params[:id])
