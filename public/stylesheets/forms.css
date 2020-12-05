@@ -5,3 +5,11 @@ label {
     text-align: left;
 }
 input { display: table-cell; }
+
+/* a {
+    color: black;
+    text-decoration: none;
+    }
+a:hover {
+    text-decoration: underline;
+    } */
