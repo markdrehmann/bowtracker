@@ -13,8 +13,13 @@ class BowsController < ApplicationController
     end
 
     post '/bows' do
+        bow = Bow.new(user_id: "#{current_user.id}")
+        params[:bow].each do |key, value|
+            bow.send("#{key}=", value) if value != ""
+        end
         binding.pry
-
+        # have to deal with Add New Maker input
+        # still have to save the bow
         # direct to the created bows show page
     end
 
