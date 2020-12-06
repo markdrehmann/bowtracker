@@ -22,8 +22,13 @@ class BowsController < ApplicationController
             bow.maker = Maker.create(name: params[:maker][:name])
         end
         
-        bow.save
-        redirect "/bows/#{bow.id}"
+        if params[:bow].each { |key, value| value == "" } && params[:maker][:name] == ""
+            # error message?
+            redirect '/bows/new'            
+        else
+            bow.save
+            redirect "/bows/#{bow.id}"
+        end
     end
 
     get '/bows/:id' do
