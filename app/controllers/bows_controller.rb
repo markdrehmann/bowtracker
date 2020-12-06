@@ -13,7 +13,7 @@ class BowsController < ApplicationController
     end
 
     post '/bows' do
-        # binding.pry
+        binding.pry
 
         # direct to the created bows show page
     end

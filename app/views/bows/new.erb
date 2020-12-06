@@ -41,7 +41,7 @@
 </p><br>
 <p>
     <label>Maker:</label>               ### THIS SECTION DOESN'T WORK. IT BREAKS PARAMS. NEED TO FIX VALUES? OR NAMES?
-    <select name="maker" id="maker">
+    <select name="bow[maker_id]" id="maker">
         <option value=""></option>
         <% @makers.each do |m| %>
             <option name="bow[maker_id]" value="<%= m.id %>" id="<%= m.name %>"><%= m.name %></option>
@@ -49,7 +49,7 @@
     </select>
 
     <label>Or Add Maker:</label>
-    <input type="text" name="bow[maker][name]">
+    <input type="text" name="maker[name]">
 </p><br>
 <p>
     <input type="submit" value="Add Bow">
