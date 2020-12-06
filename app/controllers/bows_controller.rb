@@ -17,8 +17,11 @@ class BowsController < ApplicationController
         params[:bow].each do |key, value|
             bow.send("#{key}=", value) if value != ""
         end
-        binding.pry
-        # have to deal with Add New Maker input
+        
+        if bow.maker_id == nil && params[:maker][:name] != ""
+            bow.maker = Maker.create(name: params[:maker][:name])
+        end
+        
         bow.save
         redirect "/bows/#{bow.id}"
     end
