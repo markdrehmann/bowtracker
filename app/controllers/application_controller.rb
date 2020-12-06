@@ -25,7 +25,11 @@ class ApplicationController < Sinatra::Base
     else
       redirect to '/'
     end
-end
+  end
+
+  get '/easter' do
+    erb :for_fun
+  end
 
   helpers do
     def current_user
