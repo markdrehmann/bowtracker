@@ -19,8 +19,8 @@ class BowsController < ApplicationController
         end
         binding.pry
         # have to deal with Add New Maker input
-        # still have to save the bow
-        # direct to the created bows show page
+        bow.save
+        redirect "/bows/#{bow.id}"
     end
 
     get '/bows/:id' do
