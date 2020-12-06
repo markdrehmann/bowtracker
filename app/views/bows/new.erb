@@ -12,44 +12,44 @@
 
 <form method="post" action="/bows">
 <p>
-    <label for="instrument">Instrument:</label>
-    <input type="text" name="instrument" id="instrument" placeholder="violin/viola/etc...">
-    <label for="brand">Brand:</label>
-    <input type="text" name="brand" id="brand">
-    <label for="year_made">Year Made:</label>
-    <input type="text" name="year_made" id="year_made">
+    <label for="bow[instrument]">Instrument:</label>
+    <input type="text" name="bow[instrument]" id="bow[instrument]" placeholder="violin/viola/etc...">
+    <label for="bow[brand]">Brand:</label>
+    <input type="text" name="bow[brand]" id="bow[brand]">
+    <label for="bow[year_made]">Year Made:</label>
+    <input type="text" name="bow[year_made]" id="bow[year_made]">
 </p><br>
 <p>   
-    <label for="weight">Weight:</label>
-    <input type="text" name="weight" id="weight">
-    <label for="balance">Balance:</label>
-    <input type="text" name="balance" id="balance">
-    <label for="strength">Strength:</label>
-    <input type="text" name="strength" id="strength">
+    <label for="bow[weight]">Weight:</label>
+    <input type="text" name="bow[weight]" id="bow[weight]">
+    <label for="bow[balance]">Balance:</label>
+    <input type="text" name="bow[balance]" id="bow[balance]">
+    <label for="bow[strength]">Strength:</label>
+    <input type="text" name="bow[strength]" id="bow[strength]">
 </p><br>
 <p>    
-    <label for="length">Length:</label>
-    <input type="text" name="length" id="length">
-    <label for="shape">Shape:</label>
-    <input type="text" name="shape" id="shape">
-    <label for="materials">Materials:</label>
-    <input type="text" name="materials" id="materials">
+    <label for="bow[length]">Length:</label>
+    <input type="text" name="bow[length]" id="bow[length]">
+    <label for="bow[shape]">Shape:</label>
+    <input type="text" name="bow[shape]" id="bow[shape]">
+    <label for="bow[materials]">Materials:</label>
+    <input type="text" name="bow[materials]" id="bow[materials]">
 </p><br>
 <p>
-    <label for="notes">Notes:</label>
-    <input type="text" name="notes" id="notes">
+    <label for="bow[notes]">Notes:</label>
+    <input type="text" name="bow[notes]" id="bow[notes]">
 </p><br>
 <p>
     <label>Maker:</label>               ### THIS SECTION DOESN'T WORK. IT BREAKS PARAMS. NEED TO FIX VALUES? OR NAMES?
     <select name="maker" id="maker">
         <option value=""></option>
-        <% @makers.each do |maker| %>
-            <option name="maker" value="<%= maker.id %>" id="<%= maker.name %>"><%= maker.name %></option>
+        <% @makers.each do |m| %>
+            <option name="bow[maker_id]" value="<%= m.id %>" id="<%= m.name %>"><%= m.name %></option>
         <% end %>
     </select>
 
     <label>Or Add Maker:</label>
-    <input type="text" name="maker">
+    <input type="text" name="bow[maker][name]">
 </p><br>
 <p>
     <input type="submit" value="Add Bow">
