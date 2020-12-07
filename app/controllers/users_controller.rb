@@ -29,7 +29,8 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect "/users/#{user.id}"
          else
-            erb :'/users/login'
+            flash[:error] = "Invalid entry, try again!"
+            redirect '/users/login'
          end
     end
 

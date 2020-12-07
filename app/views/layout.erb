@@ -17,6 +17,16 @@
   <body>
     <div class="wrapper">
 
+        <center>
+        <% if flash[:error] %>
+          <h4 style="color:red;"><%= flash[:error] %></h4>
+        <% end %>
+
+        <% if flash[:message] %>
+          <h4 style="color:green;"><%= flash[:message] %></h4>
+        <% end %>
+        </center>
+
         <%= yield %>
 
       <footer class="branding">
