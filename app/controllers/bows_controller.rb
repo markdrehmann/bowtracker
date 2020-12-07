@@ -23,10 +23,11 @@ class BowsController < ApplicationController
         end
         
         if params[:bow].each { |key, value| value == "" } && params[:maker][:name] == ""
-            # error message?
+            flash[:error] = "You must fill in the form to create a bow!"
             redirect '/bows/new'            
         else
             bow.save
+            flash[:message] = "New Bow Created!"
             redirect "/bows/#{bow.id}"
         end
     end
