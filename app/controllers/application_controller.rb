@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get '/easter' do
+  get '/fun' do
     erb :for_fun
   end
 
