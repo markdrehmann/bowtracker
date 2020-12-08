@@ -6,16 +6,14 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        params.each do |label, input|
-            if input.empty?
-            #   flash[:new_user_error] = "Please enter a value for #{label}"
-              redirect to '/users/new'
-            end
-          end
-
-        user = User.create(username: params[:username], email: params[:email], password: params[:password])
-        session[:user_id] = user.id
-        redirect to "/users/#{user.id}"
+        user = User.new(username: params[:username], email: params[:email], password: params[:password])
+        if user.save
+            session[:user_id] = user.id
+            redirect to "/users/#{user.id}"
+        else
+            flash[:error] = "Make sure you fill in all fields!" # or uniqueness?
+            redirect to '/users/new'
+        end
     end
 
     get '/users/login' do
