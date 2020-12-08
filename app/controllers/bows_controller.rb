@@ -19,7 +19,7 @@ class BowsController < ApplicationController
         end
         
         if bow.maker_id == nil && params[:maker][:name] != ""
-            bow.maker = Maker.create(name: params[:maker][:name])
+            bow.maker = Maker.new(name: params[:maker][:name])
         end
         
         if params[:bow].each { |key, value| value == "" } && params[:maker][:name] == ""
