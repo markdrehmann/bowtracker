@@ -6,6 +6,13 @@
     <a href="/logout">LOGOUT</a>
 </nav>
 
-<h3>Maker Index Page</h3>
+<h3>Makers</h3>
 
 </center>
+
+<ul>
+    <% @makers.each do |m| %>
+        <li><a href="/makers/#{m.id}"><%= m.name %></a></li>
+    <% end %>
+
+</ul>

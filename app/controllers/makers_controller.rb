@@ -2,7 +2,7 @@ class MakersController < ApplicationController
 
     get '/makers' do
         redirect_if_not_logged_in
-        @makers = Maker.all
+        @makers = Maker.all - Maker.find(3,4,5)
         erb :'/makers/index'
     end
 
