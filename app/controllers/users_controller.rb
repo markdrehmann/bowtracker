@@ -34,7 +34,11 @@ class UsersController < ApplicationController
 
     get '/users/:id' do
         redirect_if_not_logged_in
-        @user = current_user # code something so users can only see their own page
-        erb :"/users/show"
+        if params[:id].to_i == current_user.id
+            erb :"/users/show"
+        else
+            flash[:error] = "You can't view someone else's page!"
+            redirect to "/users/#{current_user.id}"
+        end
     end
 end
