@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect to "/users/#{user.id}"
         else
-            flash[:error] = "Make sure you fill in all fields!" # or uniqueness?
+            flash[:error] = "#{user.errors.full_messages.to_sentence}"
             redirect to '/users/new'
         end
     end
