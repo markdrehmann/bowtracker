@@ -44,7 +44,7 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
 
-    def authorized_user(bow)
+    def authorized_user?(bow)
       bow.user == current_user
     end
 
