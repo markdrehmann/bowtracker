@@ -7,6 +7,24 @@
     <a href="/logout">LOGOUT</a>
 </nav>
 
-<h1>Bow Show Page</h1>
+<h3>A <%= @bow.instrument %> bow by <%= @bow.maker.name %> made in <%= @bow.year_made %></h3>
 
 </center>
+
+<ul>
+    <li><b>Brand:</b> <%= @bow.brand %></li>
+    <li><b>Materials:</b> <%= @bow.materials %></li>
+    <li><b>Shape:</b> <%= @bow.shape %></li>
+    <li><b>Weight:</b> <%= @bow.weight %></li>
+    <li><b>Balance:</b> <%= @bow.balance %></li>
+    <li><b>Length:</b> <%= @bow.length %></li>
+    <li><b>Strength:</b> <%= @bow.strength %></li>
+    <li><b>Last Sold Price:</b> <%= @bow.last_sold_price %></li>
+    <li><b>Last Sold Date:</b> <%= @bow.last_sold_date %></li>
+    <li><b>Notes:</b> <%= @bow.notes %></li>
+</ul>
+<br><br>
+<% if authorized_user?(@bow) %>
+    <a href="/bows/<%= @bow.id %>/edit"><button>Edit</button></a> or 
+    <a href="/bows/<%= @bow.id %>/delete"><button>Delete</button></a> this bow
+<% end %>
