@@ -9,10 +9,10 @@
 <h3>Makers</h3>
 
 </center>
-
+<h4>Click on a Maker to learn more.</h4>
 <ul>
     <% @makers_sorted.each do |m| %>
-        <li><a href="/makers/<%= #{m.id} %>"><%= m.name %></a></li>
+        <li><a href="/makers/<%= m.id %>"><%= m.name %></a></li>
     <% end %>
 
 </ul>
