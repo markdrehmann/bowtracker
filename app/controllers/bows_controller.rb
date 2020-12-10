@@ -13,7 +13,7 @@ class BowsController < ApplicationController
         erb :'/bows/new'
     end
 
-    post '/bows' do
+    post '/bows' do ### I WANT TO MAKE IT SO A MAKER IS REQUIRED TO CREATE A BOW
         bow = Bow.new(user_id: "#{current_user.id}")
         params[:bow].each do |key, value|
             bow.send("#{key}=", value) if value != ""
@@ -40,12 +40,25 @@ class BowsController < ApplicationController
 
     get '/bows/:id/edit' do
         @bow = Bow.find(params[:id])
-        @makers = Maker.all
         if authorized_user?(@bow)
             erb :'/bows/edit'
         else
             flash[:error] = "You can't edit someone else's bow!"
             redirect to '/bows'
+        end
+    end
+
+    patch '/bows/:id' do
+        bow = Bow.find(params[:id])
+        params[:bow].each do |key, value|
+            bow.send("#{key}=", value) if value != ""
+        end
+        if bow.save
+            flash[:message] = "Bow Updated!"
+            redirect to "/bows/#{bow.id}"
+        else
+            flash[:error] = "#{bow.errors.full_messages.to_sentence}"
+            redirect to "/users/#{current_user.id}"
         end
     end
 end

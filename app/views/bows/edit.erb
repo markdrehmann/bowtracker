@@ -10,7 +10,7 @@
 <h3>Edit Your Bow</h3><br>
 
 
-<form method="post" action="/bows">
+<form method="post" action="/bows/<%= @bow.id %>">
 <input type="hidden" id="hidden" name="_method" value="patch">
 <p>
     <label for="bow[instrument]">Instrument:</label>
@@ -40,20 +40,9 @@
     <label for="bow[notes]">Notes:</label>
     <input type="text" name="bow[notes]" id="bow[notes]" value="<%= @bow.notes %>">
 </p><br>
-<p>
-    <label>Maker:</label>
-    <select name="bow[maker_id]" id="maker">
-        <option value="Select Maker"></option>
-        <% @makers.each do |m| %>
-            <option name="bow[maker_id]" value="<%= m.id %>" id="<%= m.name %>"><%= m.name %></option>
-        <% end %>
-    </select>
 
-    <label>Or Add Maker:</label>
-    <input type="text" name="maker[name]">
-</p><br>
 <p>
-    <input type="submit" value="Add Bow">
+    <input type="submit" value="Save Edits">
 </p>
 </form>
 </center>
