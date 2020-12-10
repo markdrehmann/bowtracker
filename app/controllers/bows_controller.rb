@@ -23,13 +23,12 @@ class BowsController < ApplicationController
             bow.maker = Maker.new(name: params[:maker][:name])
         end
         
-        if params[:bow].each { |key, value| value == "" } && params[:maker][:name] == ""
-            flash[:error] = "You must fill in the form to create a bow!"
-            redirect '/bows/new'            
-        else
-            bow.save
+        if bow.save
             flash[:message] = "New Bow Created!"
-            redirect "/bows/#{bow.id}"
+            redirect "/bows/#{bow.id}"       
+        else
+            flash[:error] = "Bows must have an instrument!" # ideally, I want bows to have an instrument and a maker
+            redirect '/bows/new' 
         end
     end
 
