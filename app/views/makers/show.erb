@@ -19,3 +19,7 @@
 
 </center>
 
+<% if current_user.id == 1 %>
+    <a href="/makers/<%= @maker.id %>/edit"><button>Edit</button></a> or 
+    <a href="/makers/<%= @maker.id %>/delete"><button>Delete</button></a> this maker
+<% end %>
