@@ -25,8 +25,19 @@ class MakersController < ApplicationController
 
     patch '/makers/:id' do
         maker = Maker.find(params[:id])
-        
-        redirect to "/makers/#{maker.id}"
+        maker.name = params[:name]
+        maker.nationality = params[:nationality]
+        maker.year_born = params[:year_born]
+        maker.year_died = params[:year_died]
+        maker.city = params[:city]
+        maker.bio = params[:bio]
+        if maker.save
+            flash[:message] = "Maker Updated!"
+            redirect to "/makers/#{maker.id}"
+        else
+            flash[:error] = "Update failed"
+            redirect to "/makers"
+        end
     end
 
     delete '/makers/:id' do
