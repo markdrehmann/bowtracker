@@ -1,1 +1,58 @@
-<h1>Bow Edit Page</h1>
+<center>
+<h1>Bow Tracker</h1>
+<nav>
+    <a href="/users/<%= current_user.id %>">HOME</a> |
+    <a href="/bows">BOWS</a> |
+    <a href="/makers">MAKERS</a> |
+    <a href="/logout">LOGOUT</a>
+</nav>
+
+<h3>Edit Your Bow</h3><br>
+
+
+<form method="post" action="/bows">
+<p>
+    <label for="bow[instrument]">Instrument:</label>
+    <input type="text" name="bow[instrument]" id="bow[instrument]" placeholder="violin/viola/etc...">
+    <label for="bow[brand]">Brand:</label>
+    <input type="text" name="bow[brand]" id="bow[brand]">
+    <label for="bow[year_made]">Year Made:</label>
+    <input type="text" name="bow[year_made]" id="bow[year_made]">
+</p><br>
+<p>   
+    <label for="bow[weight]">Weight:</label>
+    <input type="text" name="bow[weight]" id="bow[weight]">
+    <label for="bow[balance]">Balance:</label>
+    <input type="text" name="bow[balance]" id="bow[balance]">
+    <label for="bow[strength]">Strength:</label>
+    <input type="text" name="bow[strength]" id="bow[strength]">
+</p><br>
+<p>    
+    <label for="bow[length]">Length:</label>
+    <input type="text" name="bow[length]" id="bow[length]">
+    <label for="bow[shape]">Shape:</label>
+    <input type="text" name="bow[shape]" id="bow[shape]">
+    <label for="bow[materials]">Materials:</label>
+    <input type="text" name="bow[materials]" id="bow[materials]">
+</p><br>
+<p>
+    <label for="bow[notes]">Notes:</label>
+    <input type="text" name="bow[notes]" id="bow[notes]">
+</p><br>
+<p>
+    <label>Maker:</label>
+    <select name="bow[maker_id]" id="maker">
+        <option value="Select Maker"></option>
+        <% @makers.each do |m| %>
+            <option name="bow[maker_id]" value="<%= m.id %>" id="<%= m.name %>"><%= m.name %></option>
+        <% end %>
+    </select>
+
+    <label>Or Add Maker:</label>
+    <input type="text" name="maker[name]">
+</p><br>
+<p>
+    <input type="submit" value="Add Bow">
+</p>
+</form>
+</center>

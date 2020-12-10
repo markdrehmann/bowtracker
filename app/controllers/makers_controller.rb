@@ -13,4 +13,9 @@ class MakersController < ApplicationController
         erb :'/makers/show'
     end
 
+    get '/makers/:id/edit' do
+        @maker = Maker.find(params[:id])
+        erb :'/makers/edit'
+    end
+
 end

@@ -37,4 +37,15 @@ class BowsController < ApplicationController
         @bow = Bow.find(params[:id])
         erb :'/bows/show'
     end
+
+    get '/bows/:id/edit' do
+        @bow = Bow.find(params[:id])
+        @makers = Maker.all
+        if authorized_user?(@bow)
+            erb :'/bows/edit'
+        else
+            flash[:error] = "You can't edit someone else's bow!"
+            redirect to '/bows'
+        end
+    end
 end
