@@ -13,7 +13,7 @@ class BowsController < ApplicationController
         erb :'/bows/new'
     end
 
-    post '/bows' do ### I WANT TO MAKE IT SO A MAKER IS REQUIRED TO CREATE A BOW
+    post '/bows' do ### I WANT TO MAKE IT SO A MAKER IS REQUIRED TO CREATE A BOW, along with instrument
         bow = Bow.new(user_id: "#{current_user.id}")
         params[:bow].each do |key, value|
             bow.send("#{key}=", value) if value != ""
@@ -27,7 +27,7 @@ class BowsController < ApplicationController
             flash[:message] = "New Bow Created!"
             redirect "/bows/#{bow.id}"       
         else
-            flash[:error] = "Bows must have an instrument!" # ideally, I want bows to have an instrument and a maker
+            flash[:error] = "Bows must have an instrument!"
             redirect '/bows/new' 
         end
     end
