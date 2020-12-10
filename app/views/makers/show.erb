@@ -20,6 +20,10 @@
 </center>
 
 <% if current_user.id == 1 %>
-    <a href="/makers/<%= @maker.id %>/edit"><button>Edit</button></a> or 
-    <a href="/makers/<%= @maker.id %>/delete"><button>Delete</button></a> this maker
+    <a href="/makers/<%= @maker.id %>/edit"><button>Edit</button></a><br>
+     or 
+    <form action="/makers/<%= @maker.id %>" method="post">
+        <input type="hidden" id="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete"> this maker
+    </form>
 <% end %>

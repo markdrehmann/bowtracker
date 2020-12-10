@@ -18,4 +18,13 @@ class MakersController < ApplicationController
         erb :'/makers/edit'
     end
 
+    patch '' do
+
+    end
+
+    delete '/makers/:id' do
+        Maker.destroy(params[:id])
+        flash[:message] = "Maker has been deleted from memory."
+        redirect to "/makers"
+    end
 end
