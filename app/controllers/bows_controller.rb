@@ -2,7 +2,8 @@ class BowsController < ApplicationController
 
     get '/bows' do
         redirect_if_not_logged_in
-        @bows = Bow.all
+        bows = Bow.all
+        @bows_sorted = bows.sort_by {|b| b.maker.name}
         erb :'/bows/index'
     end
 

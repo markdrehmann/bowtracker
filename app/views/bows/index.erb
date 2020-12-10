@@ -9,3 +9,11 @@
 <h3>Bow Index Page</h3>
 
 </center>
+
+<h4>Click on a Bow to learn more.</h4>
+<ul>
+    <% @bows_sorted.each do |b| %>
+        <li><a href="/bows/<%= b.id %>">A <%= b.instrument %> bow by <%= b.maker.name %></a></li>
+    <% end %>
+
+</ul>
