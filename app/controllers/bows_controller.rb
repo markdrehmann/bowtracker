@@ -61,4 +61,10 @@ class BowsController < ApplicationController
             redirect to "/users/#{current_user.id}"
         end
     end
+
+    delete '/bows/:id' do
+        Bow.destroy(params[:id])
+        flash[:message] = "Bow has been deleted from memory."
+        redirect to "/users/#{current_user.id}"
+    end
 end

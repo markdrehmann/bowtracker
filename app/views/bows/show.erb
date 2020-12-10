@@ -25,6 +25,10 @@
 </ul>
 <br><br>
 <% if authorized_user?(@bow) %>
-    <a href="/bows/<%= @bow.id %>/edit"><button>Edit</button></a> or 
-    <a href="/bows/<%= @bow.id %>/delete"><button>Delete</button></a> this bow
+    <a href="/bows/<%= @bow.id %>/edit"><button>Edit</button></a> <br>
+    or
+    <form action="/bows/<%= @bow.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete"> this bow
+    </form>
 <% end %>
