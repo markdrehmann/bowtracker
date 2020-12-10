@@ -7,6 +7,14 @@
     <a href="/logout">LOGOUT</a>
 </nav>
 
-<h3>Maker Show Page</h3>
+<h3><%= @maker.name %></h3>
+<% if @maker.year_died != nil %>
+    <h3><%= @maker.year_born %> - <%= @maker.year_died %></h3>
+<% else %>
+    <h3>b. <%= @maker.year_born %></h3>
+<% end %>
+
+<h3><%= @maker.nationality %></h3>
 
 </center>
+

@@ -9,7 +9,7 @@ class MakersController < ApplicationController
 
     get '/makers/:id' do
         redirect_if_not_logged_in
-        @maker = Maker.find(params[:id]) # NOT SURE IF THIS IS CORRECT PARAMS
+        @maker = Maker.find(params[:id])
         erb :'/makers/show'
     end
 
