@@ -11,33 +11,34 @@
 
 
 <form method="post" action="/bows">
+<input type="hidden" id="hidden" name="_method" value="patch">
 <p>
     <label for="bow[instrument]">Instrument:</label>
-    <input type="text" name="bow[instrument]" id="bow[instrument]" placeholder="violin/viola/etc...">
+    <input type="text" name="bow[instrument]" id="bow[instrument]" placeholder="violin/viola/etc..." value="<%= @bow.instrument %>">
     <label for="bow[brand]">Brand:</label>
-    <input type="text" name="bow[brand]" id="bow[brand]">
+    <input type="text" name="bow[brand]" id="bow[brand]" value="<%= @bow.brand %>">
     <label for="bow[year_made]">Year Made:</label>
-    <input type="text" name="bow[year_made]" id="bow[year_made]">
+    <input type="text" name="bow[year_made]" id="bow[year_made]"  value="<%= @bow.year_made %>">
 </p><br>
 <p>   
     <label for="bow[weight]">Weight:</label>
-    <input type="text" name="bow[weight]" id="bow[weight]">
+    <input type="text" name="bow[weight]" id="bow[weight]" value="<%= @bow.weight %>">
     <label for="bow[balance]">Balance:</label>
-    <input type="text" name="bow[balance]" id="bow[balance]">
+    <input type="text" name="bow[balance]" id="bow[balance]" value="<%= @bow.balance %>">
     <label for="bow[strength]">Strength:</label>
-    <input type="text" name="bow[strength]" id="bow[strength]">
+    <input type="text" name="bow[strength]" id="bow[strength]" value="<%= @bow.strength %>">
 </p><br>
 <p>    
     <label for="bow[length]">Length:</label>
-    <input type="text" name="bow[length]" id="bow[length]">
+    <input type="text" name="bow[length]" id="bow[length]" value="<%= @bow.length %>">
     <label for="bow[shape]">Shape:</label>
-    <input type="text" name="bow[shape]" id="bow[shape]">
+    <input type="text" name="bow[shape]" id="bow[shape]" value="<%= @bow.shape %>">
     <label for="bow[materials]">Materials:</label>
-    <input type="text" name="bow[materials]" id="bow[materials]">
+    <input type="text" name="bow[materials]" id="bow[materials]" value="<%= @bow.materials %>">
 </p><br>
 <p>
     <label for="bow[notes]">Notes:</label>
-    <input type="text" name="bow[notes]" id="bow[notes]">
+    <input type="text" name="bow[notes]" id="bow[notes]" value="<%= @bow.notes %>">
 </p><br>
 <p>
     <label>Maker:</label>
