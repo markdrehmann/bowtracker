@@ -1,1 +1,33 @@
-<h1>Maker Edit Page</h1>
+<center>
+<h1>Bow Tracker</h1>
+<nav>
+    <a href="/users/<%= current_user.id %>">HOME</a> |
+    <a href="/bows">BOWS</a> |
+    <a href="/makers">MAKERS</a> |
+    <a href="/logout">LOGOUT</a>
+</nav>
+
+<h3>Edit Maker</h3><br>
+
+<form action="/makers/<%= @maker.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+   <p>
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= @maker.name %>">
+    <label>Nationality:</label>
+    <input type="text" name="nationality" value="<%= @maker.nationality %>">
+    <label>Year Born:</label>
+    <input type="text" name="year_born" value="<%= @maker.year_born %>">
+    </p><br>
+    <p>
+    <label>Year Died:</label>
+    <input type="text" name="year_died" value="<%= @maker.year_died %>">
+    <label>City:</label>
+    <input type="text" name="city" value="<%= @maker.city %>">
+    <label>Bio:</label>
+    <input type="text" name="bio" value="<%= @maker.bio %>">
+    </p><br>
+    <input type="submit" value="Save Edits"
+</form>
+
+</center>

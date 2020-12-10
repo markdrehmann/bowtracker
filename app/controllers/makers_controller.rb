@@ -15,11 +15,18 @@ class MakersController < ApplicationController
 
     get '/makers/:id/edit' do
         @maker = Maker.find(params[:id])
-        erb :'/makers/edit'
+        if current_user == User.find(1)
+            erb :'/makers/edit'
+        else
+            flash[:error] = "Not authorized to edit this!"
+            redirect to '/makers'
+        end
     end
 
-    patch '' do
-
+    patch '/makers/:id' do
+        maker = Maker.find(params[:id])
+        
+        redirect to "/makers/#{maker.id}"
     end
 
     delete '/makers/:id' do
