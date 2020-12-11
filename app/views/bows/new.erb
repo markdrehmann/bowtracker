@@ -42,7 +42,7 @@
 <p>
     <label>Maker:</label>
     <select name="bow[maker_id]" id="maker">
-        <option value="Select Maker"></option>
+        <option value=""></option>
         <% @makers.each do |m| %>
             <option name="bow[maker_id]" value="<%= m.id %>" id="<%= m.name %>"><%= m.name %></option>
         <% end %>
