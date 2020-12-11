@@ -14,7 +14,6 @@ class BowsController < ApplicationController
     end
 
     post '/bows' do ### I WANT TO MAKE IT SO A MAKER IS REQUIRED TO CREATE A BOW, along with instrument
-        # binding.pry
         bow = Bow.new(user_id: "#{current_user.id}")
         params[:bow].each do |key, value|
             bow.send("#{key}=", value) if value != ""
