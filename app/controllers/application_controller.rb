@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base
     erb :for_fun
   end
 
+  get '/secret' do
+    erb :inigo
+  end
+
   helpers do
     def current_user
       @user = User.find(session[:user_id]) if session[:user_id]
