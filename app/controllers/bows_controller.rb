@@ -13,14 +13,14 @@ class BowsController < ApplicationController
         erb :'/bows/new'
     end
 
-    post '/bows' do ### I WANT TO MAKE IT SO A MAKER IS REQUIRED TO CREATE A BOW, along with instrument
-        bow = Bow.new(user_id: "#{current_user.id}")
+    post '/bows' do 
+        bow = current_user.bows.build
         params[:bow].each do |key, value|
             bow.send("#{key}=", value) if value != ""
         end
         
         if bow.maker_id == nil && params[:maker][:name] != ""
-            bow.maker = Maker.create(name: params[:maker][:name])
+            bow.create_maker(name: params[:maker][:name])
         end
         
         if bow.save
