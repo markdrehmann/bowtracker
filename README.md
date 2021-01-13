@@ -4,4 +4,4 @@ This app is for string players so they can track their own bows, see other bows,
 
 Usage
 
-To use this app, just clone, bundle install, run rake db:migrate, then run shotgun and open up the 'localhost' port in your browser!
+To use this app, just fork and clone, bundle install, run rake db:migrate, then run shotgun and open up the 'localhost' port in your browser!
