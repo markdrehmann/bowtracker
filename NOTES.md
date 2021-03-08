@@ -26,7 +26,6 @@ User can log on, home page - select to see user's bows (/users/:id), all bows (/
 User can create a new bow, edit/delete their own bows
 
 Bow show page - individual bow's attributes - NOT owner??
-Maker show page - individual maker's information
 Maybe make it so Makers can't be edited... or find some way to keep users from entering wrong info?
 - possibly Makers don't have a '/new' page, they can only be created in '/bows/new'
 
