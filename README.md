@@ -1,6 +1,6 @@
-# Bow Tracker!
+## Bow Tracker!
 
-This app is for string players, or instrument shops for tracking their bows, seeing other bows, and learning more about bow makers.
+This app is for string players or instrument shops for tracking their bows, seeing other bows, and learning more about bow makers.
 
 ## Usage
 
