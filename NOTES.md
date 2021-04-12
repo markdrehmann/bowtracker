@@ -30,5 +30,5 @@ Maybe make it so Makers can't be edited... or find some way to keep users from e
 - possibly Makers don't have a '/new' page, they can only be created in '/bows/new'
 
 
-- one way to expand, a User can either be a musician or a maker? not sure how to have subclasses of users...
+- one way to expand, a User can either be a musician or a maker? not sure how to have subclasses of users... i guess it's similar to having an admin profile...
 - another expansion would be adding photos to the bow instances
