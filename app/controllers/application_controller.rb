@@ -32,7 +32,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/fun' do
-    erb :for_fun
+    if logged_in?
+      erb :for_fun
+    else
+      redirect_if_not_logged_in
+    end
   end
 
   get '/secret' do
