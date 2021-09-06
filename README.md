@@ -19,7 +19,7 @@ To start server, execute:
 
     shotgun
 
-and navigate to the localhost in your browser to preview the app.
+and navigate to the localhost:9393 in your browser to preview the app.
 
 
 ## Usage
